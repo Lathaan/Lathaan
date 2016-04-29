@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Lathaan
+Comment=Lathaan P2P Cryptocurrency
+Comment[fr]=Lathaan, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Lathaan, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/lathaan-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/lathaan80.xpm
+MimeType=x-scheme-handler/lathaan;
+Categories=Office;

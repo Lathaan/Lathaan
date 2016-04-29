@@ -1,0 +1,9 @@
+Building Lathaan
+
+See doc/readme-qt.rst for instructions on building Lathaan QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Lathaan.
+
+See doc/build-*.txt for instructions on building Lathaand,
+the intended-for-services, no-graphical-interface, reference
+implementation of Lathaan.

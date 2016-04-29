@@ -1,0 +1,5 @@
+lathaan-qt usr/bin
+share/pixmaps/lathaan32.xpm usr/share/pixmaps
+share/pixmaps/lathaan80.xpm usr/share/pixmaps
+debian/lathaan-qt.desktop usr/share/applications
+debian/lathaan-qt.protocol usr/share/kde4/services/

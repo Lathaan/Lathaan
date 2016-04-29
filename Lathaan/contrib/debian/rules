@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+
+#DEB_MAKE_CHECK_TARGET = test_lathaan
+#build/lathaand::
+#	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_lathaan)
+
+DEB_INSTALL_EXAMPLES_lathaand += debian/examples/*
+DEB_INSTALL_MANPAGES_lathaand += debian/manpages/*
+
+%:
+	dh --with bash-completion $@
+
+override_dh_auto_build:
+	cd src; $(MAKE) -f makefile.unix lathaand
+	$(MAKE)
+
+override_dh_auto_clean:
+	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f lathaan-qt; fi
+	cd src; $(MAKE) -f makefile.unix clean
+
+override_dh_auto_configure:
+	qmake lathaan-qt.pro USE_QRCODE=1
+
+override_dh_auto_test:
+	cd src; $(MAKE) -f makefile.unix test_lathaan
+	src/test_lathaan
+
+# Ensure wrapper is set executable
+binary-post-install/lathaand:
+	chmod +x $(cdbs_curdestdir)usr/bin/lathaand
+binary-post-install/lathaan-qt:
+	chmod +x $(cdbs_curdestdir)usr/bin/lathaan-qt
